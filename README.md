@@ -61,5 +61,18 @@ git clone https://github.com/Avantiiika25/ReactJS-Tut.git
 cd ReactJS-Tut
 npm install
 npm start
+ ``` 
+---
+---
 
+## 🤝 Want to Contribute?
+
+Sure! Contributions make the community stronger 💪
+
+- 🍴 **Fork** the repository  
+- 🌿 **Create** your feature branch  
+- 💻 **Make changes** and test  
+- 📩 **Submit** a Pull Request
+
+> Your contributions are welcome and appreciated! 💖
 
