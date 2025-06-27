@@ -1,0 +1,26 @@
+E-Shop
+--------------------------
+
+User Journey
+------------
+1. user will open the website
+    -> he will see Products page
+2. products will be fetched from redux store
+3. user will click on "Add to Cart"
+    -> Cart will be updated in redux store
+4. user will open Cart page
+    -> cart data will be fetched from redux store
+5. user will checkout
+    -> order summary will be shown
+
+6. user will login
+    -> Auth redux store will be updated
+7. Cart & Checkout page will be shown to only logged-in users
+
+
+dependencies
+------------
+react-redux
+redux-toolkit
+react-router-dom
+tailwind

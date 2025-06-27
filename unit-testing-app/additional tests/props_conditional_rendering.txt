@@ -1,0 +1,36 @@
+// UserGreeting.jsx
+import React from "react";
+
+const UserGreeting = ({ isLoggedIn, username }) => {
+  return (
+    <div>
+      {isLoggedIn ? (
+        <h1 data-testid="greeting">Welcome, {username}!</h1>
+      ) : (
+        <h1 data-testid="greeting">Please log in</h1>
+      )}
+    </div>
+  );
+};
+
+export default UserGreeting;
+
+
+
+
+// UserGreeting.test.js
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import UserGreeting from "./UserGreeting";
+
+test("renders welcome message when user is logged in", () => {
+  render(<UserGreeting isLoggedIn={true} username="Sohan" />);
+  const message = screen.getByTestId("greeting");
+  expect(message).toHaveTextContent("Welcome, Sohan!");
+});
+
+test("renders login prompt when user is not logged in", () => {
+  render(<UserGreeting isLoggedIn={false} />);
+  const message = screen.getByTestId("greeting");
+  expect(message).toHaveTextContent("Please log in");
+});

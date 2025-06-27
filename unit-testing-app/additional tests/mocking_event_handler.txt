@@ -1,0 +1,33 @@
+// ButtonClick.jsx
+import React from "react";
+
+const ButtonClick = ({ onButtonClick }) => {
+  return (
+    <div>
+      <button data-testid="mock-button" onClick={onButtonClick}>
+        Click Me
+      </button>
+    </div>
+  );
+};
+
+export default ButtonClick;
+
+
+
+// ButtonClick.test.js
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import ButtonClick from "./ButtonClick";
+
+test("calls the function when button is clicked", () => {
+  const mockFunction = jest.fn();
+
+  render(<ButtonClick onButtonClick={mockFunction} />);
+
+  const button = screen.getByTestId("mock-button");
+
+  fireEvent.click(button);
+
+  expect(mockFunction).toHaveBeenCalledTimes(1);
+});

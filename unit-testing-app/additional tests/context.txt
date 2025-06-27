@@ -1,0 +1,74 @@
+// AuthContext.jsx
+import React, { createContext, useState } from "react";
+
+const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export default AuthContext;
+
+
+
+
+// LoginStatus.jsx
+import React, { useContext } from "react";
+import AuthContext from "./AuthContext";
+
+const LoginStatus = () => {
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
+  return (
+    <div>
+      <h1 data-testid="status">
+        {isLoggedIn ? "Welcome, User!" : "Please log in"}
+      </h1>
+      <button data-testid="login-button" onClick={() => setIsLoggedIn(true)}>
+        Login
+      </button>
+    </div>
+  );
+};
+
+export default LoginStatus;
+
+
+
+
+// LoginStatus.test.js
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import LoginStatus from "./LoginStatus";
+import { AuthProvider } from "./AuthContext";
+
+test("displays login prompt initially", () => {
+  render(
+    <AuthProvider>
+      <LoginStatus />
+    </AuthProvider>
+  );
+
+  const statusMessage = screen.getByTestId("status");
+  expect(statusMessage).toHaveTextContent("Please log in");
+});
+
+test("updates message when login button is clicked", () => {
+  render(
+    <AuthProvider>
+      <LoginStatus />
+    </AuthProvider>
+  );
+
+  const loginButton = screen.getByTestId("login-button");
+  fireEvent.click(loginButton);
+
+  const statusMessage = screen.getByTestId("status");
+  expect(statusMessage).toHaveTextContent("Welcome, User!");
+});

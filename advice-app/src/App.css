@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #393E46;
+  font-family: 'Nova Square', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #EEEEEE;
+}
+
+h1 {
+  margin-top: 100px;
+  font-size: 60px;
+}
+
+.get-advice-button {
+  margin-top: 200px;
+  padding: 10px 20px; 
+}
+
+.original-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #00ADB5;
+  background-color: transparent;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.original-button::before, .original-button::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #00ADB5;
+  transition: .3s;
+}
+
+.original-button::before {
+  top: 0;
+}
+
+.original-button::after {
+  bottom: 0;
+}
+
+.original-button:hover::before {
+  transform: translateX(-100%);
+}
+
+.original-button:hover::after {
+  transform: translateX(100%);
+}
+
+.count-message {
+  margin-top: 100px;
+  font-size: x-large;
+}
