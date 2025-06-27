@@ -61,3 +61,8 @@ git clone https://github.com/Avantiiika25/ReactJS-Tut.git
 cd ReactJS-Tut
 npm install
 npm start
+
+---
+##🌈 Author
+Made with 💙 by Avantika Gondal
+📬 Connect on GitHub | ✨ React Developer in Progress!
