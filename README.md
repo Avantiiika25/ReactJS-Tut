@@ -1,4 +1,4 @@
-# ⚛️ ReactJS-Tut By Avantika Gondal
+# ⚛️ ReactJS-Tut 
 
 🚀 A complete journey through modern **React.js** concepts, hands-on apps, and core fundamentals — created by [Avantiiika25](https://github.com/Avantiiika25)!
 
